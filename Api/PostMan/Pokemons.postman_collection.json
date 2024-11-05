@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "d9e16a4e-8a39-4405-82f0-2195f62622d6",
+		"name": "Pokemon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31426121"
+	},
+	"item": [
+		{
+			"name": "Creat pokemon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"thzzz\",\r\n        \"description\": \"Refreshing green tea\",\r\n        \"price\": 10.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/teas"
+			},
+			"response": []
+		},
+		{
+			"name": "Read pokemon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/pokemon"
+			},
+			"response": []
+		},
+		{
+			"name": "Read pokemon/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/pokemon/658c10d8f654fed9e6fcbb1b"
+			},
+			"response": []
+		},
+		{
+			"name": "Update pokemon",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"robw\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/teas/6568926e0a85644a247a950e"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete pokemon",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3000/teas/6568926e0a85644a247a950e"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NThjMTBkN2Y2NTRmZWQ5ZTZmY2JiMGIiLCJpYXQiOjE3MDM4NjM2OTEsImV4cCI6MTcwMzg3MDg5MX0.cSmrKyNXic8D5FrkqjInBOeui1ktuem8yS-ohIQyD8g"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
