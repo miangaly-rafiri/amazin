@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-  
 </head>
 <body>
     <div id="page" class="page-product">
@@ -20,30 +19,30 @@
                             <div class="list-inline">
                                 <a href="#0" class="menu-trigger"><i class="ri-menu-line"></i></a>
                                 <ul>
-                                    <li><a href=""><i class="ri-user-line"></i></a></li>
-                                    <li><a href=""><span class="item-floating">3</span><i class="ri-star-line"></i></a></li>
+                                    <li><a href="#"><i class="ri-user-line"></i></a></li>
+                                    <li><a href="#"><span class="item-floating">3</span><i class="ri-star-line"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="header-center">
                             <nav class="menu">
                                 <ul>
-                                    <li><a href=""><span>Home</span></a></li>
-                                    <li><a href=""><span>Products</span></a></li>
-                                    <li><a href=""><span>Disc</span></a></li>
+                                    <li><a href="#"><span>Home</span></a></li>
+                                    <li><a href="#"><span>Products</span></a></li>
+                                    <li><a href="#"><span>Disc</span></a></li>
                                 </ul>
                                 <ul>
-                                    <li><a href=""><span>Specials</span></a></li>
-                                    <li><a href=""><span>Sale</span></a></li>
+                                    <li><a href="#"><span>Specials</span></a></li>
+                                    <li><a href="#"><span>Sale</span></a></li>
                                 </ul>
                             </nav>
-                            <div class="branding"><a href="">Amazin</a></div>
+                            <div class="branding"><a href="#">Amazin</a></div>
                         </div>
                         <div class="header-right">
                             <div class="list-inline">
                                 <ul>
-                                    <li><a href=""><i class="ri-search-line"></i></a></li>
-                                    <li><a href=""><span class="item-floating">0</span><i class="ri-shopping-bag-line"></i></a></li>
+                                    <li><a href="#"><i class="ri-search-line"></i></a></li>
+                                    <li><a href="#"><span class="item-floating">0</span><i class="ri-shopping-bag-line"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -57,26 +56,29 @@
                 <div class="container">
                     <div class="wrap">
                         <div class="product dotgrid">
-                            <div class="product-detail">
-                                <div class="wrapper">
-                                    <div class="image">
-                                        <div class="inter">
-                                            <div class="outer-main">
-                                                <div class="main-image swiper">
-                                                    <div class="swiper-wrapper">                                        		
-                                                        <div class="swiper-slide"><img src="assets/product_01.jpg" alt=""></div>
-                                                        <div class="swiper-slide"><img src="assets/product_01b.jpg" alt=""></div>
-                                                        <div class="swiper-slide"><img src="assets/product_06.jpg" alt=""></div>
-                                                        <div class="swiper-slide"><img src="assets/product_06b.jpg" alt=""></div>
-                                                        <div class="swiper-slide"><img src="assets/product_02.jpg" alt=""></div>
-                                                        <div class="swiper-slide"><img src="assets/product_02b.jpg" alt=""></div>
-                                                    </div>
-                                                    <div class="swiper-pagination"></div> <!-- Pagination for main images -->
-                                                </div>
+                            <!--<div class="product-detail">-->
+                            <div class="wrapper">
+                                <div class="image">
+                                    <!-- <div class="inter"> -->
+                                    <div class="outer-main">
+                                        <div class="main-image swiper">
+                                            <div class="wrap swiper-wrapper">
+                                                <div class="item swiper-slide"><img src="assets/product_01.jpg" alt=""></div>
+                                                <div class="item swiper-slide"><img src="assets/product_01b.jpg" alt=""></div>
+                                                <div class="item swiper-slide"><img src="assets/product_06.jpg" alt=""></div>
+                                                <div class="item swiper-slide"><img src="assets/product_06b.jpg" alt=""></div>
+                                                <div class="item swiper-slide"><img src="assets/product_02.jpg" alt=""></div>
+                                                <div class="item swiper-slide"><img src="assets/product_02b.jpg" alt=""></div>
                                             </div>
-                                            <div class="outer-thumb ob-cover">
-                                                <div class="thumbnail-image swiper">
-                                                    <div class="swiper-wrapper"> <!-- Correctly structured thumbnail images -->
+                                            <!-- <div class="swiper-pagination"></div> Pagination for main images -->
+                                        </div>
+                                    </div>
+                                    <div class="outer-thumb ob-cover">
+                                        <div class="thumbnail-image swiper">
+                                            <div class="wrap swiper-wrapper">
+                                                <!-- <div class="swiper-wrapper"> Correctly structured thumbnail images -->
+                                                <div class="thumb-wrap">
+                                                    <div class="item swiper-slide">
                                                         <div class="thumb-wrap"><img src="assets/product_01.jpg" alt=""></div>
                                                         <div class="thumb-wrap"><img src="assets/product_01b.jpg" alt=""></div>
                                                         <div class="thumb-wrap"><img src="assets/product_06.jpg" alt=""></div>
@@ -84,15 +86,41 @@
                                                         <div class="thumb-wrap"><img src="assets/product_02.jpg" alt=""></div>
                                                         <div class="thumb-wrap"><img src="assets/product_02b.jpg" alt=""></div>
                                                     </div>
-                                                </div>
-                                            </div>
+                                                   
+                                                       <!-- Slide 1 -->
+        <div class="item swiper-slide">
+            <div class="thumb-wrap"><img src="assets/product_01.jpg" alt=""></div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="item swiper-slide">
+            <div class="thumb-wrap"><img src="assets/product_01b.jpg" alt=""></div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="item swiper-slide">
+            <div class="thumb-wrap"><img src="assets/product_06.jpg" alt=""></div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="item swiper-slide">
+            <div class="thumb-wrap"><img src="assets/product_06b.jpg" alt=""></div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="item swiper-slide">
+            <div class="thumb-wrap"><img src="assets/product_02.jpg" alt=""></div>
+        </div>
+        <!-- Slide 6 -->
+        <div class="item swiper-slide">
+            <div class="thumb-wrap"><img src="assets/product_02b.jpg" alt=""></div>
+        </div>
+    </div>
+</div>
+
                                         </div>
                                     </div>
-                                </div>
+                                
+                                <div class="summary"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="summary"></div>
                 </div>
             </div>
         </main>
