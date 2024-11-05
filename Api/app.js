@@ -48,6 +48,36 @@ app.post('/users/login', async (req, res) => {
     }
 });
 
+// Nouvelle route pour récupérer le panier de l'utilisateur
+app.get('/users/cart', async (req, res) => {
+    const { userId } = req.query; // L'ID de l'utilisateur est passé en paramètre de la requête
+
+    try {
+        // Requête pour récupérer le panier de l'utilisateur (si existant)
+        const [cart] = await pool.execute(`
+            SELECT c.id AS cart_id, c.created_at, ci.product_id, ci.quantity, p.name AS product_name, p.price
+            FROM Cart c
+            JOIN CartItem ci ON c.id = ci.cart_id
+            JOIN Product p ON ci.product_id = p.id
+            WHERE c.user_id = ?
+        `, [userId]);
+
+        if (cart.length === 0) {
+            return res.status(404).json({ message: 'No cart found for this user.' });
+        }
+
+        // Retourne le panier avec les produits associés
+        res.json({
+            message: 'Cart retrieved successfully',
+            cart
+        });
+    } catch (e) {
+        console.error('Error retrieving cart:', e);
+        res.status(500).send('An error occurred while retrieving the cart.');
+    }
+});
+
+
 // Démarrage du serveur avec test de connexion
 app.listen(port, async () => {
     console.log(`Server is running on http://localhost:${port}`);
