@@ -9,25 +9,39 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
-// Route de login pour vérifier les informations de l'utilisateur
+// Route de login pour vérifier les informations de l'utilisateur et récupérer les produits associés
 app.post('/users/login', async (req, res) => {
     const { email, password } = req.body;
 
     try {
         // Requête pour trouver l'utilisateur correspondant
-        const [rows] = await pool.execute(
+        const [userRows] = await pool.execute(
             'SELECT * FROM User WHERE email = ? AND password = ?',
             [email, password]
         );
 
-        if (rows.length === 0) {
+        if (userRows.length === 0) {
             // Si aucun utilisateur trouvé
-            return res.status(400).send('Please create an account!');
+            return res.status(400).json({ message: 'Please create an account!' });
         }
 
         // Utilisateur trouvé
-        const user = rows[0];
-        res.json({ message: 'Login successful', user });
+        const user = userRows[0];
+
+        // Requête pour récupérer les produits associés à l'utilisateur
+        const [products] = await pool.execute(`
+            SELECT p.id AS product_id, p.name AS product_name, p.price, s.name AS store_name
+            FROM Product p
+            JOIN Store s ON p.store_id = s.id
+            WHERE s.user_id = ?
+        `, [user.id]);
+
+        // Réponse avec les informations de l'utilisateur et les produits associés
+        res.json({
+            message: 'Login successful',
+            user,
+            products
+        });
     } catch (e) {
         console.error('Error during login:', e);
         res.status(500).send('An error occurred during login.');
