@@ -1,6 +1,6 @@
 // Product image > page single
 const thumbImage = new Swiper('.thumbnail-image', {
-    logo: true,
+   // logo: true,
     direction: 'vertical',
     spaceBetween: 15,
     slidesPerView: 1, // Ajustez le nombre d'images visibles

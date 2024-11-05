@@ -257,7 +257,7 @@ nav.menu .sub-menu li{
 }
 
 .product .outer-thumb .item {
-    height: fit-content;
+    height: fit-content!important;
     cursor: pointer;
 }
 
