@@ -4,6 +4,7 @@
   "description": "API pour la gestion des utilisateurs et des pokémons",
   "main": "app.js",
   "scripts": {
+    "init-db": "mysql -u momo -p < ./src/databases/schema.sql",
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +18,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.3.0",
     "mongoose": "^8.7.0",
+    "mysql2": "^3.11.3",
     "validator": "^13.11.0"
   },
   "devDependencies": {
