@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Paiement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .payment-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 108px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            padding: 11px;
+            margin-bottom: 35px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            background-color: #8400ff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Style for the popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .popup button {
+            background-color: #45a049;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #8400ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="payment-container">
+        <h2>Paiement Visa Card</h2>
+        <form id="payment-form" action="{{ route('orders.store') }}" method="post">
+            <label for="card-number">Numéro de carte :</label>
+            <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+
+            <label for="card-holder">Titulaire de la carte :</label>
+            <input type="text" id="card-holder" name="card-holder" placeholder="John Doe" required>
+
+            <div class="flex-container">
+                <div>
+                    <label for="expiry-date">Date d'expiration :</label>
+                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                </div>
+                <div>
+                    <label for="cvv">CVV :</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                </div>
+            </div>
+            <button type="submit">PAY</button>
+        </form>
+    </div>
+
+    <!-- Popup Message -->
+    <div id="confirmation-popup" class="popup">
+        <h3>Votre commande a bien été passée !</h3>
+        <button onclick="closePopup()">Fermer</button>
+    </div>
+
+    <script>
+        // Show popup after form submission
+        document.getElementById('payment-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting immediately
+            showPopup(); // Show the confirmation popup
+        });
+
+        // Function to display the popup
+        function showPopup() {
+            document.getElementById('confirmation-popup').style.display = 'block';
+            setTimeout(function () {
+                // Redirect to index.html after 3 seconds
+                window.location.href = 'Accueil/index.html';
+            }, 3000); // 3 seconds delay before redirect
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById('confirmation-popup').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
