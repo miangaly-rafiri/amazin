@@ -1,3 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+:root {
+    --primary-color: #2bcbba; /* Couleur principale bleu-vert */
+    --light-color: #f5f5f5; /* Couleur de fond claire */
+    --dark-color: #212121; /* Couleur de texte sombre */
+    --grey-color: #777; /* Couleur gris */
+    --red-color: #ff4757; /* Couleur rouge pour les alertes */
+    --white-color: #ffffff; /* Couleur blanche */
+    --shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Ombre pour les éléments */
+    --transition: all 0.3s ease; /* Transition pour les animations */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Police de caractère */
+    background-color: var(--light-color); /* Couleur de fond */
+    color: var(--dark-color); /* Couleur du texte */
+    margin: 0; /* Suppression des marges par défaut */
+    padding: 0; /* Suppression du padding par défaut */
+}
+
+h1 {
+    font-size: 2.5rem; /* Taille du titre */
+    color: var(--dark-color); /* Couleur du titre */
+    text-align: center; /* Centrage du titre */
+    margin: 20px 0; /* Marges autour du titre */
+}
+
+.container {
+    width: 90%; /* Largeur de la conteneur */
+    margin: 0 auto; /* Centrage du conteneur */
+}
+
+.product-container {
+    display: flex; /* Utilisation de Flexbox pour le layout */
+    flex-wrap: wrap; /* Permettre à l'éléments de passer à la ligne */
+    justify-content: space-around; /* Espacement autour des éléments */
+    gap: 20px; /* Espacement entre les éléments */
+    margin-top: 30px; /* Marges au dessus de la section produit */
+}
+
+.product {
+    cursor: pointer; /* Curseur pointer pour indiquer cliquable */
+    width: 300px; /* Largeur des cartes produit */
+    background-color: var(--white-color); /* Couleur de fond des cartes produit */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: var(--shadow); /* Ombre */
+    overflow: hidden; /* Masquer le débordement */
+    transition: transform 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.product:hover {
+    transform: scale(1.05); /* Agrandir au survol */
+}
+
+.product-card {
+    padding: 20px; /* Espacement à l'intérieur de la carte produit */
+    text-align: center; /* Centrage du texte */
+}
+
+.product-image {
+    width: 100%; /* Largeur de l'image */
+    height: auto; /* Hauteur automatique pour maintenir le ratio */
+    border-radius: 10px; /* Coins arrondis pour l'image */
+    transition: transform 0.3s ease; /* Transition pour l'effet de survol de l'image */
+}
+
+.product-name {
+    font-size: 1.5rem; /* Taille du nom du produit */
+    color: var(--dark-color); /* Couleur du texte */
+    margin: 15px 0 10px; /* Marges autour du nom */
+}
+
+.product-price {
+    font-size: 1.25rem; /* Taille du prix */
+    color: var(--primary-color); /* Couleur du prix */
+    font-weight: bold; /* Gras */
+}
+
+.product:hover .product-image {
+    transform: scale(1.1); /* Agrandir l'image au survol */
+}
+
+/* Styles pour le modal */
+.modal {
+    display: none; /* Masquer par défaut */
+    position: fixed; /* Positionnement fixe */
+    top: 0; /* En haut */
+    left: 0; /* À gauche */
+    width: 100%; /* Prendre toute la largeur */
+    height: 100%; /* Prendre toute la hauteur */
+    background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+    z-index: 1000; /* Position élevée pour le modal */
+    justify-content: center; /* Centrer le contenu */
+    align-items: center; /* Centrer le contenu */
+}
+
+.modal-content {
+    background-color: var(--white-color); /* Couleur de fond du modal */
+    border-radius: 10px; /* Coins arrondis */
+    max-width: 800px; /* Largeur maximum */
+    width: 90%; /* Largeur responsive */
+    padding: 20px; /* Espacement à l'intérieur */
+    box-shadow: var(--shadow); /* Ombre */
+    display: flex; /* Utilisation de Flexbox */
+    gap: 30px; /* Espacement entre les éléments */
+    opacity: 0; /* Opacité initiale */
+    animation: fadeIn 0.3s forwards; /* Animation d'apparition */
+}
+
+.modal-inner {
+    display: flex; /* Utilisation de Flexbox */
+    gap: 20px; /* Espacement entre les éléments */
+}
+
+.modal-image {
+    width: 100%; /* Largeur de l'image */
+    max-width: 350px; /* Largeur maximum */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: var(--shadow); /* Ombre */
+}
+
+.modal-info {
+    max-width: 400px; /* Largeur maximum des informations */
+}
+
+.modal-title {
+    font-size: 2rem; /* Taille du titre */
+    color: var(--dark-color); /* Couleur du titre */
+}
+
+.modal-description {
+    color: var(--grey-color); /* Couleur de la description */
+    font-size: 1rem; /* Taille de la description */
+    margin: 10px 0; /* Marges autour de la description */
+}
+
+.add-to-cart {
+    margin-top: 20px; /* Marges au-dessus du bouton */
+}
+
+.add-to-cart .btn-primary {
+    background-color: var(--primary-color); /* Couleur de fond du bouton */
+    color: var(--white-color); /* Couleur du texte */
+    font-size: 1.1rem; /* Taille du texte */
+    padding: 10px 20px; /* Espacement à l'intérieur */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointer */
+    transition: background-color 0.3s ease; /* Transition pour le survol */
+}
+
+.add-to-cart .btn-primary:hover {
+    background-color: var(--dark-color); /* Changement de couleur au survol */
+}
+
+.close {
+    font-size: 2rem; /* Taille du bouton de fermeture */
+    color: var(--dark-color); /* Couleur du texte */
+    cursor: pointer; /* Curseur pointer */
+    position: absolute; /* Positionnement absolu */
+    top: 10px; /* Positionnement en haut */
+    right: 10px; /* Positionnement à droite */
+}
+
+.close:hover {
+    color: var(--red-color); /* Changement de couleur au survol */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Opacité initiale */
+        transform: translateY(20px); /* Translation initiale */
+    }
+    to {
+        opacity: 1; /* Opacité finale */
+        transform: translateY(0); /* Position finale */
+    }
+}
+
 
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prata&display=swap');
@@ -470,47 +650,4 @@ nav.menu .sub-menu li{
 .footer-text {
     text-align: center;
     margin-top: 15px;
-}
-
-/* Style de la modale du panier */
-#cartModal {
-    display: none; /* Caché par défaut */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-}
-
-.modal-content {
-    background-color: #fff;
-    padding: 20px;
-    width: 400px;
-    margin: 100px auto;
-    border-radius: 8px;
-}
-
-.modal-inner {
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-.cart-items {
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-.cart-items .cart-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.cart-items .cart-item button {
-    background-color: red;
-    color: white;
-    border: none;
-    cursor: pointer;
 }

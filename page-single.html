@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazin</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Product Amazin</title>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 </head>
@@ -42,7 +42,7 @@
                             <div class="list-inline">
                                 <ul>
                                     <li><a href="#"><i class="ri-search-line"></i></a></li>
-                                    <li><a href="#"><span class="item-floating">0</span><i class="ri-shopping-bag-line"></i></a></li>
+                                    <li><a href="#" onclick="openCartModal()"><span class="item-floating">0</span><i class="ri-shopping-bag-line"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -51,82 +51,71 @@
             </div>
         </header>
 
-        <main>
-            <div class="section">
-                <div class="container">
-                    <div class="wrap">
-                        <div class="product dotgrid">
-                            <!--<div class="product-detail">-->
-                            <div class="wrapper">
-                                <div class="image">
-                                    <!-- <div class="inter"> -->
-                                    <div class="outer-main">
-                                        <div class="main-image swiper">
-                                            <div class="wrap swiper-wrapper">
-                                                <div class="item swiper-slide"><img src="assets/product_01.jpg" alt=""></div>
-                                                <div class="item swiper-slide"><img src="assets/product_01b.jpg" alt=""></div>
-                                                <div class="item swiper-slide"><img src="assets/product_06.jpg" alt=""></div>
-                                                <div class="item swiper-slide"><img src="assets/product_06b.jpg" alt=""></div>
-                                                <div class="item swiper-slide"><img src="assets/product_02.jpg" alt=""></div>
-                                                <div class="item swiper-slide"><img src="assets/product_02b.jpg" alt=""></div>
-                                            </div>
-                                            <!-- <div class="swiper-pagination"></div> Pagination for main images -->
-                                        </div>
-                                    </div>
-                                    <div class="outer-thumb ob-cover">
-                                        <div class="thumbnail-image swiper">
-                                            <div class="wrap swiper-wrapper">
-                                                <!-- <div class="swiper-wrapper"> Correctly structured thumbnail images -->
-                                                <div class="thumb-wrap">
-                                                    <div class="item swiper-slide">
-                                                        <div class="thumb-wrap"><img src="assets/product_01.jpg" alt=""></div>
-                                                        <div class="thumb-wrap"><img src="assets/product_01b.jpg" alt=""></div>
-                                                        <div class="thumb-wrap"><img src="assets/product_06.jpg" alt=""></div>
-                                                        <div class="thumb-wrap"><img src="assets/product_06b.jpg" alt=""></div>
-                                                        <div class="thumb-wrap"><img src="assets/product_02.jpg" alt=""></div>
-                                                        <div class="thumb-wrap"><img src="assets/product_02b.jpg" alt=""></div>
-                                                    </div>
-                                                   
-                                                       <!-- Slide 1 -->
-        <div class="item swiper-slide">
-            <div class="thumb-wrap"><img src="assets/product_01.jpg" alt=""></div>
+    <main class="container product-container">
+        <!-- Produit 1 -->
+        <div class="product" onclick="openModal('ig_03.jpg', 'Produit 1', 'Description du produit 1.', '€20.00', 1)">
+            <div class="product-card">
+                <img src="ig_03.jpg" alt="Produit 1" class="product-image">
+                <h2 class="product-name">Produit 1</h2>
+                <p class="product-price">€20.00</p>
+            </div>
         </div>
-        <!-- Slide 2 -->
-        <div class="item swiper-slide">
-            <div class="thumb-wrap"><img src="assets/product_01b.jpg" alt=""></div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="item swiper-slide">
-            <div class="thumb-wrap"><img src="assets/product_06.jpg" alt=""></div>
-        </div>
-        <!-- Slide 4 -->
-        <div class="item swiper-slide">
-            <div class="thumb-wrap"><img src="assets/product_06b.jpg" alt=""></div>
-        </div>
-        <!-- Slide 5 -->
-        <div class="item swiper-slide">
-            <div class="thumb-wrap"><img src="assets/product_02.jpg" alt=""></div>
-        </div>
-        <!-- Slide 6 -->
-        <div class="item swiper-slide">
-            <div class="thumb-wrap"><img src="assets/product_02b.jpg" alt=""></div>
-        </div>
-    </div>
-</div>
 
-                                        </div>
-                                    </div>
-                                
-                                <div class="summary"></div>
-                            </div>
-                        </div>
+        <!-- Produit 2 -->
+        <div class="product" onclick="openModal('ig_03.jpg', 'Produit 2', 'Description du produit 2.', '€30.00', 2)">
+            <div class="product-card">
+                <img src="ig_03.jpg" alt="Produit 2" class="product-image">
+                <h2 class="product-name">Produit 2</h2>
+                <p class="product-price">€30.00</p>
+            </div>
+        </div>
+
+        <!-- Produit 3 -->
+        <div class="product" onclick="openModal('ig_03.jpg', 'Produit 3', 'Description du produit 3.', '€40.00', 3)">
+            <div class="product-card">
+                <img src="ig_03.jpg" alt="Produit 3" class="product-image">
+                <h2 class="product-name">Produit 3</h2>
+                <p class="product-price">€40.00</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modale Produit -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-inner">
+                <img id="modalImage" src="" alt="" class="modal-image">
+                <div class="modal-info">
+                    <h2 id="modalTitle" class="modal-title"></h2>
+                    <p id="modalDescription" class="modal-description"></p>
+                    <p class="product-price" id="modalPrice"></p>
+                    <div class="add-to-cart">
+                        <button class="btn-primary" id="addToCartButton">Ajouter au panier</button>
                     </div>
                 </div>
             </div>
-        </main>
-        <footer></footer>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Modale Panier -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCartModal()">&times;</span>
+            <div class="modal-inner">
+                <h2>Votre Panier</h2>
+                <div id="cartItems" class="cart-items">
+                    <!-- Les produits ajoutés au panier s'afficheront ici -->
+                </div>
+                <button id="checkoutButton" onclick="checkout()">Passer à la caisse</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
