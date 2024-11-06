@@ -79,6 +79,7 @@ INSERT INTO User (username, email, password, isAdmin, city_id) VALUES
 -- Insérer des magasins
 INSERT INTO Store (name, address, phone, user_id, city_id) VALUES 
 ('Tacobel', '123 Main St, New York, NY', '123-456-7890', 1, 1),
+('Costco', '123 Main St, New York, NY', '123-456-7890', 1, 1),
 ('ZARA', '456 Elm St, Los Angeles, CA', '098-765-4321', 2, 2),
 ('Franprix C', '789 Maple Ave, Paris', '+33 1 23 45 67 89', 3, 3);
 
