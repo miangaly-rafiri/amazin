@@ -514,3 +514,12 @@ nav.menu .sub-menu li{
     border: none;
     cursor: pointer;
 }
+
+.proximity-banner {
+    color: black; /* Couleur du texte en noir */
+    text-align: center; /* Centre le texte */
+    font-size: 24px; /* Taille de texte plus grande */
+    font-weight: bold;
+    padding: 10px 0;
+    margin: 0 auto;
+}
