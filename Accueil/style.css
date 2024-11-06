@@ -481,12 +481,12 @@ footer.inner-footer{
     position: relative;
 }
 .slider .ob-cover{
-    height: 430px;
+    height: 750px;
 }
 .ob-cover img{
     position: absolute;
-    height: 100%;
-    width: 100%;object-fit: cover;
+    height: 65%;
+    width: 100%;
 }
 .slider .title-info{
     position: absolute;
@@ -500,8 +500,8 @@ footer.inner-footer{
     flex-direction:column;
     align-items: center;
     gap: 30px;
-    padding-bottom: 5vw;
-    max-width: 600px;
+    padding-bottom: 25vw;
+    /* max-width: 600px; */
     margin: 0 auto;;
 }
 .slider .title-info .price{
