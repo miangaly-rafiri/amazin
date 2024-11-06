@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier</title>
+    <link rel="stylesheet" href="panier.css">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#products">Produits</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container">
+        <h1>Panier</h1>
+        
+        <!-- Liste des produits dans le panier -->
+        <div id="cart-items" class="cart-items">
+            <!-- Exemple de produit dans le panier -->
+            <div class="cart-item">
+                <img src="https://via.placeholder.com/150" alt="Produit" class="cart-item-img">
+                <div class="cart-item-details">
+                    <p class="product-name">Produit 1</p>
+                    <p class="product-price">€20,00</p>
+                    <div class="product-quantity">
+                        <label for="quantity">Quantité :</label>
+                        <input type="number" id="quantity" value="1" min="1">
+                    </div>
+                    <button class="remove-btn">Supprimer</button>
+                </div>
+            </div>
+            <!-- Ajouter d'autres produits ici -->
+        </div>
+
+        <!-- Total du panier -->
+        <div id="total-price" class="total-price">
+            <p>Total: <span id="total-amount">€20,00</span></p>
+        </div>
+
+        <!-- Bouton de validation -->
+        <button id="checkout-button" class="checkout-button">Valider la commande</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
