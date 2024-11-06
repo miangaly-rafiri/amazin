@@ -81,13 +81,28 @@ INSERT INTO Store (name, address, phone, user_id, city_id) VALUES
 ('Tacobel', '123 Main St, New York, NY', '123-456-7890', 1, 1),
 ('Costco', '123 Main St, New York, NY', '123-456-7890', 1, 1),
 ('ZARA', '456 Elm St, Los Angeles, CA', '098-765-4321', 2, 2),
-('Franprix C', '789 Maple Ave, Paris', '+33 1 23 45 67 89', 3, 3);
+('Franprix C', '789 Maple Ave, Paris', '+33 1 23 45 67 89', 3, 3),
+('Apple Store', '5th Avenue, New York, NY', '212-336-1440', 1, 1),
+('Best Buy', 'Broadway, New York, NY', '212-555-0185', 1, 1),
+('Nike Store', 'Santa Monica Blvd, Los Angeles, CA', '310-555-0193', 2, 2),
+('Le Bon Marché', '24 Rue de Sèvres, Paris', '+33 1 44 39 80 00', 3, 3),
+('Muji', 'Ginza, Tokyo', '+81 3-3538-1311', NULL, 4);
 
 -- Insérer des produits
 INSERT INTO Product (name, price, store_id) VALUES 
 ('Product 1', 19, 1),
 ('Product 2', 10, 2),
-('Product 3', 39, 3);
+('Product 3', 39, 3),
+('iPhone 15', 999.99, 5),
+('MacBook Air', 1199.99, 5),
+('Samsung TV 65"', 499.99, 6),
+('PlayStation 5', 499.99, 6),
+('Nike Air Max', 120.00, 7),
+('Adidas Superstar', 85.00, 7),
+('Chanel No.5 Perfume', 105.00, 8),
+('Hermès Scarf', 385.00, 8),
+('Muji Notebook', 3.99, 9),
+('Muji Pen Set', 8.99, 9);
 
 -- Insérer des paniers
 INSERT INTO Cart (user_id) VALUES 
@@ -95,15 +110,24 @@ INSERT INTO Cart (user_id) VALUES
 (2),
 (3);
 
+
 -- Insérer des éléments de panier
 INSERT INTO CartItem (cart_id, product_id, quantity) VALUES 
 (1, 1, 2),
 (1, 2, 1),
 (2, 2, 3),
-(3, 1, 1);
+(3, 1, 1),
+(1, 3, 1),  -- Cart 1, Product 2
+(1, 5, 2),  -- Cart 1, Product 5
+(1, 10, 3), -- Cart 1, Product 10
+(2, 6, 1),  -- Cart 2, Product 6
+(2, 7, 1),  -- Cart 2, Product 7
+(3, 1, 1),  -- Cart 3, Product 1
+(3, 4, 2),  -- Cart 3, Product 4
+(3, 8, 1);  -- Cart 3, Product 8
 
 -- Insérer des paiements
 INSERT INTO Payment (cart_id, amount, method, status) VALUES 
-(1, 39.98, 'Credit Card', 'Completed'),
-(2, 89.97, 'PayPal', 'Completed'),
-(3, 19.99, 'Credit Card', 'Pending');
+(1, 119.97, 'Credit Card', 'Completed'),
+(2, 135.00, 'Debit Card', 'Pending'),
+(3, 899.98, 'Credit Card', 'Completed');
