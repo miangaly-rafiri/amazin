@@ -107,64 +107,91 @@ h1 {
     opacity: 0; /* Opacité initiale */
     animation: fadeIn 0.3s forwards; /* Animation d'apparition */
 }
-
-.modal-inner {
-    display: flex; /* Utilisation de Flexbox */
-    gap: 20px; /* Espacement entre les éléments */
+/* Style pour le bouton de fermeture */
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 36px; /* Taille plus grande pour le X */
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    z-index: 1010; /* Assurer que la croix soit au-dessus du contenu */
+    transition: color 0.3s;
 }
 
-.modal-image {
-    width: 100%; /* Largeur de l'image */
-    max-width: 350px; /* Largeur maximum */
-    border-radius: 10px; /* Coins arrondis */
-    box-shadow: var(--shadow); /* Ombre */
+.modal .close:hover {
+    color: #333; /* Changer la couleur au survol */
 }
 
-.modal-info {
-    max-width: 400px; /* Largeur maximum des informations */
+/* Style pour l'en-tête de la modale (Titre) */
+.modal h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
 }
 
-.modal-title {
-    font-size: 2rem; /* Taille du titre */
-    color: var(--dark-color); /* Couleur du titre */
+/* Style pour les éléments du panier */
+.cart-items {
+    max-height: 250px;
+    overflow-y: auto;
+    margin: 20px 0;
+    padding-right: 10px;
+    background-color: #f9f9f9; /* Légère couleur de fond */
+    border-radius: 5px;
 }
 
-.modal-description {
-    color: var(--grey-color); /* Couleur de la description */
-    font-size: 1rem; /* Taille de la description */
-    margin: 10px 0; /* Marges autour de la description */
+/* Style pour chaque article dans le panier */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    color: #555;
+    margin-left: 15px;
 }
 
-.add-to-cart {
-    margin-top: 20px; /* Marges au-dessus du bouton */
+/* Style pour la quantité du produit */
+.cart-item span {
+    font-weight: bold;
 }
 
-.add-to-cart .btn-primary {
-    background-color: var(--primary-color); /* Couleur de fond du bouton */
-    color: var(--white-color); /* Couleur du texte */
-    font-size: 1.1rem; /* Taille du texte */
-    padding: 10px 20px; /* Espacement à l'intérieur */
-    border: none; /* Pas de bordure */
-    border-radius: 5px; /* Coins arrondis */
-    cursor: pointer; /* Curseur pointer */
-    transition: background-color 0.3s ease; /* Transition pour le survol */
+/* Style pour le bouton "Supprimer" */
+.cart-item button {
+    background-color: #f44336; /* Couleur rouge pour le bouton supprimer */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
 }
 
-.add-to-cart .btn-primary:hover {
-    background-color: var(--dark-color); /* Changement de couleur au survol */
+.cart-item button:hover {
+    background-color: #d32f2f; /* Couleur rouge foncé au survol */
 }
 
-.close {
-    font-size: 2rem; /* Taille du bouton de fermeture */
-    color: var(--dark-color); /* Couleur du texte */
-    cursor: pointer; /* Curseur pointer */
-    position: absolute; /* Positionnement absolu */
-    top: 10px; /* Positionnement en haut */
-    right: 10px; /* Positionnement à droite */
+/* Style pour le bouton "Passer à la caisse" */
+#checkoutButton {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 20px;
 }
 
-.close:hover {
-    color: var(--red-color); /* Changement de couleur au survol */
+#checkoutButton:hover {
+    background-color: #0056b3;
 }
 
 @keyframes fadeIn {
